@@ -1,12 +1,30 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import './globals.css';
 import { Button as Btn } from './components/ui/button';
+import { useStore, resetData } from './store/index';
+
+
+function ShowCount(){
+  const store = useStore();
+  return (<div>count:{store.count}</div>)
+}
+
 
 function App() {
   const [count, setCount] = useState(0);
+  const store = useStore();
+
+  useEffect(() => {
+    return () => {
+      // 在组件卸载的时候重置数据
+      resetData()
+    }
+  }, []);
+
+
 
   return (
     <>
@@ -35,6 +53,16 @@ function App() {
       <Btn>Button</Btn>
       &nbsp;
       <Btn variant="destructive">Destructive</Btn>
+
+      <h2>store</h2>
+      <div>
+        <ShowCount />
+        <div>count:{store.count}</div>
+        <Btn onClick={()=>{
+          store.count +=1;
+        }}>+1</Btn>
+      </div>
+    
     </>
   );
 }
