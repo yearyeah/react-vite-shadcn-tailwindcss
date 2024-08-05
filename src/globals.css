@@ -10,7 +10,8 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    /* --primary: 222.2 47.4% 11.2%; */
+    --primary: 219.59 100% 61.96%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -67,3 +68,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+
+/* .text-sm {
+  font-size: 0.75rem; 
+}
+
+.font-medium {
+  font-weight: 400 !important;
+} */
